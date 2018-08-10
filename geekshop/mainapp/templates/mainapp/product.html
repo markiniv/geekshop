@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}
+    Контакты
+{% endblock %}
+{% block content %}
+{% include 'mainapp/include/inc_menu.html' %}
+<div class="main">
+    <div class="product_text">
+        <!--<a href="/media/{{ product.image }}" target="_blank">-->
+        <img class="photo" src="/media/{{ product.image }}" alt="NHL 18" width="370" height="370">
+        </a>
+        <div class="product_description">
+            <h1>{{product.name}}</h1>
+            <h2 class="title">Описание товара</h2>
+            <hr>
+            <P class="short_description">
+                {{ product.short_description }}
+            </P>
+            <hr>
+        </div>
+
+    </div>
+    <h2 class="description_title">Описание товара</h2>
+    <div class="more_description">
+        <p class="description">
+            {{ product.description }}
+        </p>
+    </div>
+</div>
+{% endblock %}

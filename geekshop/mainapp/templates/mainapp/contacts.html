@@ -1,0 +1,47 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles%}
+{% block title %}
+    Контакты
+{% endblock %}
+{% block content %}
+{% include 'mainapp/include/inc_menu.html' %}
+    <div class="main">
+        <div class="contact_wrapper">
+            <form action="handler.php" method="post">
+                <div class="form">
+                    <div class="name_txt">
+                        <label for="name">Введите Ваше Имя</label>
+                        <input class="txt" id="name" type="text" placeholder="Введите Ваше Имя" required>
+                    </div>
+                    <div class="email_txt">
+                        <label for="email">Введите Email</label>
+                        <input class="email" id="email" type="text" placeholder="Введите Email" required>
+                    </div>
+                    <div class="letter_subject_txt">
+                        <label for="topic">Введите тему письма</label>
+                        <input class="txt" id="topic" type="text" placeholder="Введите тему" required>
+                    </div>
+                    <div class="message_txt">
+                        <label for="topic">Сообщение</label>
+                        <textarea class="area" name="area" id="txt_area" cols="30" rows="10" placeholder="Введите комментарий"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Отправить">
+                        <input type="reset" value="Очистить">
+                    </div>
+                </div>
+            </form>
+            <div class="contacts">
+                <h2>Контакты</h2>
+                <div class="contacts_phone">
+                    <img class="contacts_img" src="{% static 'img/phone.png' %}" alt="phone">
+                    <p>1-999-555-1000</p>
+                </div>
+                <div class="contacts_email">
+                    <img class="contacts_img" src="{% static 'img/mail.png' %}" alt="email">
+                    <p>info@sbs.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

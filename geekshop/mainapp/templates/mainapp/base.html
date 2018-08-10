@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header_wrapper">
+                <img class="header_logo" src="{% static 'img/ps.png' %}" alt="photo" width="45" height="45">
+                <div class="header_social">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
+            {% block yellow_box %}
+            {% endblock %}
+        </header>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+            <div class="social_btn">
+                <div class="social_btn_fb">
+                    <img src="{% static 'img/f_icon.png' %}" alt="fb">
+                </div>
+                <div class="social_btn_tw">
+                    <img src="{% static 'img/tw_icon.png' %}" alt="tw">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="main_footer">
+                <ul class="main_footer__category">
+                    <li>Категории</li>
+                </ul>
+                <ul class="main_footer__account">
+                    <li>Аккаунт</li>
+                </ul>
+                <ul class="main_footer__support">
+                    <li>Поддержка</li>
+                </ul>
+                <div class="main_footer__newsletter">Новости</div>
+                <div class="main_footer__about">О Нас</div>
+            </div>
+            <p class="footer">&copy;Все правав защищены!</p>
+        </footer>
+    </div>
+</body>
+</html>

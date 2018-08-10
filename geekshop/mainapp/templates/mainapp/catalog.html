@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}
+    Каталог
+{% endblock %}
+{% block content %}
+{% include 'mainapp/include/inc_menu.html' %}
+    <div class="main">
+        <div class="catalog_wrapper">
+            {% if products %}
+                {% for product in products %}
+                    <div class="product">
+                        <div class="product_photo">
+                            <img class="photo" src="/media/{{ product.image }}" alt="NHL 18" width="250" height="235">
+                        </div>
+                        <span class="product_title">
+                            <a href="{% url 'product' product.pk %}">
+                                {{product.name}}
+                            </a>
+                        </span>
+                    </div>
+                {% endfor%}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
